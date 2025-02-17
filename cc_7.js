@@ -13,3 +13,19 @@ function calculateHourlyWage(salary, hoursPerWeek) {
 
 console.log(calculateHourlyWage(52000, 40))
 console.log(calculateHourlyWage(75000, 35))
+
+// Task 3: 
+const calculateLoyaltyDiscount = (amount, years) => {
+    if (years >= 5) {
+        return `Discounted Price: $${(amount - (amount * 0.15)).toFixed(2)}`
+    }
+    if (years >= 3) {
+        return `Discounted Price: $${(amount - (amount * 0.10)).toFixed(2)}`
+    }
+    if (years < 3) {
+        return `Discounted Price: $${(amount - (amount * 0.05)).toFixed(2)}`
+    }
+}
+
+console.log(calculateLoyaltyDiscount(100,6))
+console.log(calculateLoyaltyDiscount(200,2))
