@@ -14,7 +14,7 @@ function calculateHourlyWage(salary, hoursPerWeek) {
 console.log(calculateHourlyWage(52000, 40))
 console.log(calculateHourlyWage(75000, 35))
 
-// Task 3: 
+// Task 3: Arrow Function
 const calculateLoyaltyDiscount = (amount, years) => {
     if (years >= 5) {
         return `Discounted Price: $${(amount - (amount * 0.15)).toFixed(2)}`
@@ -29,3 +29,22 @@ const calculateLoyaltyDiscount = (amount, years) => {
 
 console.log(calculateLoyaltyDiscount(100,6))
 console.log(calculateLoyaltyDiscount(200,2))
+
+// Task 4: Parameters & Arguments
+function calculateShippingCost(weight, location, expedited = false) {
+    if (location === "USA" && expedited) {
+        return `Shipping Cost: $${(5 + (0.5 * weight) + 10).toFixed(2)}`
+    }
+    if (location === "USA") {
+        return `Shipping Cost: $${(5 + (0.5 * weight)).toFixed(2)}`
+    }
+    if (location === "Canada" && expedited) {
+        return `Shipping Cost: $${(10 + (0.7 * weight) + 10).toFixed(2)}`
+    }
+    if (location === "Canada") {
+        return `Shipping Cost: $${(10 + (0.7 * weight)).toFixed(2)}`
+    }
+}
+
+console.log(calculateShippingCost(10, "USA", true))
+console.log(calculateShippingCost(5, "Canada", false))
