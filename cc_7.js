@@ -63,3 +63,15 @@ function filterHighValueTransactions(transactions, filterFunction) {
     return transactions.filter(transaction => filterFunction(transaction))
 }
 console.log(filterHighValueTransactions(transactions, amount => amount > 1000))
+
+// Task 7: Closures 
+function createBudgetTracker() {
+    let total = 0
+    return function(amount) {
+        return `Current Balance: -$${(total += amount).toFixed(2)}`
+    }
+}
+let budget = createBudgetTracker()
+
+console.log(budget(300))    
+console.log(budget(200))
